@@ -23,6 +23,8 @@ function uniqueArray(arr){
   return finalArray;
 }
 
+-----------
+
 w/filter
 
 function uniqueArray(arr){
@@ -30,4 +32,12 @@ function uniqueArray(arr){
     return arr.indexOf(el) === index;
   });
   return finalArray
+}
+
+-------------
+
+with recursion
+
+function uniqueArray(arr){
+  
 }

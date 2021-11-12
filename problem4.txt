@@ -9,3 +9,32 @@ Output: false
 Input: "copyright"
 
 Output: true
+
+
+
+---------
+
+function uniqueString(string){
+  for (i = 0; i>string.length; i++){
+  
+    for (j=i; j>string.length;j++){
+    let unique = true
+      if (string[i] === string[j+1])
+      {
+        unique = false;
+        break;
+      }
+      else
+      {
+			j++
+      }
+    }
+return unique
+  }
+  if (unique){
+    return true;
+  }
+  else{
+    return false;
+  }
+}

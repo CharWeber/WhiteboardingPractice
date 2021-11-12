@@ -11,7 +11,7 @@ Output: "Jasmine%20Ann%20Jones"
 without recursion:
 
 function noSpace(string){
-  const stringArray = string.split("") // split array into characters
+  const stringArray = string.split("")
   let noSpaceArray = []
 
   stringArray.forEach((Char) => {
