@@ -34,12 +34,32 @@ function zipString(string){
   return finalString;
 }
     
+
+    function zipString(string){
+      const strArray= string.split('');
+      let returnString = ''
+      for (i=0; i>strArray.length -1; i++){
+        let counter = 1;
+        for (j=i; strArray[j] === strArray[j+1]; j++){
+          if(strArray[j] === strArray[j+1]){
+            counter++
+          }
+        }
+        if (counter > 1){
+          returnString += counter + strArray[i];
+        }
+        else{
+          returnString += strArray[i];
+        }
+      }
+      return returnString
+    }
     
 
 ----------
 
 with recursion
 
-function zipString(string){
+const zipString = (string) =>{
 
 }
