@@ -11,34 +11,44 @@ Output: "3ab2c4da"
 
 without recursion
     
-    function zipString(string){
-      const strArray= string.split('');
-      let returnString = ''
-      for (i=0; i<strArray.length; i++){
-        if (strArray[i-1] != strArray[i]){
-
-        let counter = 1;
-        for (j=i; strArray[j] === strArray[j+1]; j++){
-          if(strArray[j] === strArray[j+1]){
-            counter++
-          }
-        }
-        if (counter > 1){
-          returnString += counter + strArray[i];
-        }
-        else{
-          returnString += strArray[i];
-        }
-      }
+function zipString(string){
+  const strArray = string.split('');
+  let returnString = '';
+  for (i=0; i<strArray.length; i++){
+    let counter = 1;
+    for (j = i; j< strArray.length; j++)
+    if (strArray[i] !== strArray[j+1]){
+      break;
     }
-    return returnString
+    else{
+      counter++
+      i++
+    }
+    if (counter > 1){
+      returnString += counter + strArray[i]
+    }
+    else{
+      returnString += strArray[i]
+    }
   }
-    
+  return returnString
+}
 
+
+
+Example
+Input: "aaabccdddda"
+
+Output: "3ab2c4da"
 ----------
 
 with recursion
 
-const zipString = (string) =>{
+const zipStringRecursive = (string) =>{
+  if (string.length <=1){
+    return string
+  }
+  let strArray = string.split('');
+  
 
 }
