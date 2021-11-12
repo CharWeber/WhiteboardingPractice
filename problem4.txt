@@ -15,10 +15,11 @@ Output: true
 ---------
 
 function uniqueString(string){
+  let unique = false;
   for (i = 0; i>string.length; i++){
   
     for (j=i; j>string.length;j++){
-    let unique = true
+    unique = true
       if (string[i] === string[j+1])
       {
         unique = false;
@@ -29,12 +30,6 @@ function uniqueString(string){
 			j++
       }
     }
-return unique
   }
-  if (unique){
-    return true;
-  }
-  else{
-    return false;
-  }
+return unique;
 }
