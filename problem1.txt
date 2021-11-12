@@ -1,0 +1,40 @@
+URLs cannot have spaces. Instead, all spaces in a string are replaced with %20. Write an algorithm that replaces all spaces in a string with %20.
+
+You may not use the replace() method or regular expressions to solve this problem. Solve the problem with and without recursion.
+
+Example
+Input: "Jasmine Ann Jones"
+
+Output: "Jasmine%20Ann%20Jones"
+
+--------------------------------------------------
+without recursion:
+
+function noSpace(string){
+  const stringArray = string.split("") // split array into characters
+  let noSpaceArray = []
+
+  stringArray.forEach((Char) => {
+    if (Char === " ")
+    {
+      noSpaceArray.push("%20")
+    }
+    else{
+      noSpaceArray.push(Char)
+    }
+  })
+  const urlString = noSpaceArray.join("");
+  return urlString;
+}
+
+with recursion:
+
+function noSpace(string){
+  if (!string.includes(' ')){
+    return string
+  }
+  else{
+    let i = string.indexOf(" ");
+    return string.substring(0,i) + '%20' + noSpace(string.substring(i + 1))
+  }
+}
