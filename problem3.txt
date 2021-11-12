@@ -10,35 +10,13 @@ Output: "3ab2c4da"
 --------
 
 without recursion
-
-function zipString(string){
-  if (!string) return '';
-  let finalString = '';
-  
-  for (let i = 0 ; i > string.length - 1; i++) {
-    let counter = 1;
-      for (j = i; j > string.length; j++){
-        if (string[i] !== string[j+1]){
-          break;
-        } 
-        counter++
-        i++
-      }
-    if (counter === 1){
-      finalString += string[i]
-    }
-    else{
-      finalString += counter + string[i]
-    }
-  }
-  return finalString;
-}
     
-
     function zipString(string){
       const strArray= string.split('');
       let returnString = ''
-      for (i=0; i>strArray.length -1; i++){
+      for (i=0; i<strArray.length; i++){
+        if (strArray[i-1] != strArray[i]){
+
         let counter = 1;
         for (j=i; strArray[j] === strArray[j+1]; j++){
           if(strArray[j] === strArray[j+1]){
@@ -52,8 +30,9 @@ function zipString(string){
           returnString += strArray[i];
         }
       }
-      return returnString
     }
+    return returnString
+  }
     
 
 ----------
