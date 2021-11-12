@@ -38,6 +38,15 @@ function uniqueArray(arr){
 
 with recursion
 
-function uniqueArray(arr){
-  
+function uniqueArray(arr) {
+  if (arr.length === 0) {
+  return arr.concat([]);
+  }
+  const newArr = arr.slice(0, -1);
+  if (newArr.includes(arr[arr.length-1])){
+    return uniqueArray(newArr)
+  }
+  else{
+    return uniqueArray(newArr).concat(arr[arr.length-1])
+  }  
 }
